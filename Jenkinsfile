@@ -12,7 +12,7 @@ pipeline {
 
         stage('Build docker image') {
             steps {  
-                bat 'docker build -t pitchairaman/nodeapp:$latest .'
+                bat 'docker build -t pitchairaman/nodeapp .'
             }
         }
         stage('login to dockerhub') {
@@ -22,7 +22,7 @@ pipeline {
         }
         stage('push image') {
             steps{
-                bat 'docker push pitchairaman/nodeapp:$latest'
+                bat 'docker push pitchairaman/nodeapp'
             }
         }
 }
